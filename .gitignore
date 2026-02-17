@@ -1,8 +1,16 @@
 CLAUDE.md
 download_checklist.md
-data/raw/*
+
+# Large data files — ignore contents but keep directory structure visible on GitHub
+data/raw/campaign_finance/*
+data/raw/reference/*
+data/raw/527/*
+data/raw/expend/*
 data/extracted/*
 data/raw.zip
 data/*.db
 data/*.db-shm
 data/*.db-wal
+
+# Keep directory placeholder files
+!**/.gitkeep
