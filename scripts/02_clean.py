@@ -155,12 +155,12 @@ def create_pres_candidates(conn: sqlite3.Connection) -> None:
         SELECT
             Cycle,
             CID,
-            FECCanID,
-            CRPName,
-            Party,
+            MAX(FECCanID)  AS FECCanID,
+            MAX(CRPName)   AS CRPName,
+            MAX(Party)     AS Party,
             DistIDRunFor,
-            CycleCand,
-            RecipCode,
+            MAX(CycleCand) AS CycleCand,
+            MAX(RecipCode) AS RecipCode,
             CASE Cycle
                 WHEN '2004' THEN 'pre_CU'
                 WHEN '2008' THEN 'pre_CU'
@@ -169,6 +169,7 @@ def create_pres_candidates(conn: sqlite3.Connection) -> None:
             END AS era
         FROM candidates
         WHERE DistIDRunFor = 'PRES'
+        GROUP BY Cycle, CID
     """)
 
     n = conn.execute("SELECT COUNT(*) FROM pres_candidates").fetchone()[0]

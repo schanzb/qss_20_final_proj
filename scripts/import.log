@@ -1,0 +1,324 @@
+2026-02-17 14:59:05,702  INFO      ============================================================
+2026-02-17 14:59:05,702  INFO      Citizens United Import Pipeline — 01_import.py
+2026-02-17 14:59:05,703  INFO      Database: /dartfs-hpc/rc/home/f/f006tzf/qss20_final/data/citizens_united.db
+2026-02-17 14:59:05,703  INFO      ============================================================
+2026-02-17 14:59:05,729  INFO      Creating database schema …
+2026-02-17 14:59:05,888  INFO      Schema created.
+2026-02-17 14:59:05,893  INFO      Loading CPI factors …
+2026-02-17 14:59:05,912  INFO        CPI factors refreshed from inflation.csv
+2026-02-17 14:59:05,912  INFO        CPI factors loaded:
+2026-02-17 14:59:05,918  INFO          2004: ×1.6653
+2026-02-17 14:59:05,918  INFO          2008: ×1.4611
+2026-02-17 14:59:05,919  INFO          2012: ×1.3607
+2026-02-17 14:59:05,919  INFO          2016: ×1.3018
+2026-02-17 14:59:05,925  INFO      Loading category codes …
+2026-02-17 14:59:05,936  INFO        493 category codes loaded
+2026-02-17 14:59:05,942  INFO      Importing candidates [2004] from 04cands.txt …
+2026-02-17 14:59:05,955  INFO        →      3,843 rows  (0 errors)  [04cands.txt]
+2026-02-17 14:59:05,968  INFO        → 3,843 candidate records
+2026-02-17 14:59:05,974  INFO      Importing committees [2004] from 04cmtes.txt …
+2026-02-17 14:59:05,999  INFO        →      9,322 rows  (0 errors)  [04cmtes.txt]
+2026-02-17 14:59:06,020  INFO        → 9,322 committee records
+2026-02-17 14:59:06,025  INFO      Importing pacs_to_candidates [2004] from 04pacs.txt …
+2026-02-17 14:59:06,708  INFO        →    245,041 rows  (0 errors)  [04pacs.txt]
+2026-02-17 14:59:07,073  INFO        → 245,041 PAC contribution records
+2026-02-17 14:59:07,080  INFO      Importing pac_to_pac [2004] from 04pac_other.txt …
+2026-02-17 14:59:07,600  INFO        →     89,121 rows  (0 errors)  [04pac_other.txt]
+2026-02-17 14:59:07,922  INFO        → 89,121 PAC-to-PAC records
+2026-02-17 14:59:07,928  INFO      Importing individual_contributions [2004] from 04indivs.txt …
+2026-02-17 14:59:07,929  INFO        File size: 0.6 GB — streaming in 50,000-row chunks
+2026-02-17 14:59:12,548  INFO          … 500,000 rows committed to individual_contributions
+2026-02-17 14:59:16,964  INFO          … 1,000,000 rows committed to individual_contributions
+2026-02-17 14:59:21,415  INFO          … 1,500,000 rows committed to individual_contributions
+2026-02-17 14:59:25,980  INFO          … 2,000,000 rows committed to individual_contributions
+2026-02-17 14:59:30,289  INFO          … 2,500,000 rows committed to individual_contributions
+2026-02-17 14:59:30,441  INFO        →  2,537,689 rows  (0 errors)  [04indivs.txt]
+2026-02-17 14:59:30,691  INFO        → 2,537,689 individual contribution records
+2026-02-17 14:59:30,691  INFO        indivs [2004] completed in 0.4 min
+2026-02-17 14:59:30,697  INFO      Importing expenditures [2004] from 04expends.txt …
+2026-02-17 14:59:30,698  INFO        File size: 0.4 GB — streaming
+2026-02-17 14:59:34,665  INFO          … 500,000 rows committed to expenditures
+2026-02-17 14:59:38,579  INFO          … 1,000,000 rows committed to expenditures
+2026-02-17 14:59:42,480  INFO          … 1,500,000 rows committed to expenditures
+2026-02-17 14:59:43,901  INFO        →  1,730,695 rows  (0 errors)  [04expends.txt]
+2026-02-17 14:59:44,320  INFO        → 1,730,695 expenditure records
+2026-02-17 14:59:44,320  INFO        expends [2004] completed in 0.2 min
+2026-02-17 14:59:44,326  INFO      Importing candidates [2008] from 08cands.txt …
+2026-02-17 14:59:44,337  INFO        →      4,108 rows  (0 errors)  [08cands.txt]
+2026-02-17 14:59:44,353  INFO        → 4,108 candidate records
+2026-02-17 14:59:44,358  INFO      Importing committees [2008] from 08cmtes.txt …
+2026-02-17 14:59:44,382  INFO        →     10,017 rows  (0 errors)  [08cmtes.txt]
+2026-02-17 14:59:44,404  INFO        → 10,017 committee records
+2026-02-17 14:59:44,408  INFO      Importing pacs_to_candidates [2008] from 08pacs.txt …
+2026-02-17 14:59:45,370  INFO        →    304,315 rows  (0 errors)  [08pacs.txt]
+2026-02-17 14:59:45,781  INFO        → 304,315 PAC contribution records
+2026-02-17 14:59:45,786  INFO      Importing pac_to_pac [2008] from 08pac_other.txt …
+2026-02-17 14:59:46,534  INFO        →    110,648 rows  (0 errors)  [08pac_other.txt]
+2026-02-17 14:59:46,785  INFO        → 110,648 PAC-to-PAC records
+2026-02-17 14:59:46,790  INFO      Importing individual_contributions [2008] from 08indivs.txt …
+2026-02-17 14:59:46,791  INFO        File size: 0.9 GB — streaming in 50,000-row chunks
+2026-02-17 14:59:51,535  INFO          … 500,000 rows committed to individual_contributions
+2026-02-17 14:59:56,172  INFO          … 1,000,000 rows committed to individual_contributions
+2026-02-17 15:00:00,880  INFO          … 1,500,000 rows committed to individual_contributions
+2026-02-17 15:00:05,199  INFO          … 2,000,000 rows committed to individual_contributions
+2026-02-17 15:00:09,454  INFO          … 2,500,000 rows committed to individual_contributions
+2026-02-17 15:00:13,537  INFO          … 3,000,000 rows committed to individual_contributions
+2026-02-17 15:00:17,933  INFO          … 3,500,000 rows committed to individual_contributions
+2026-02-17 15:00:18,778  INFO        →  3,636,349 rows  (0 errors)  [08indivs.txt]
+2026-02-17 15:00:19,155  INFO        → 3,636,349 individual contribution records
+2026-02-17 15:00:19,155  INFO        indivs [2008] completed in 0.5 min
+2026-02-17 15:00:19,160  INFO      Importing expenditures [2008] from 08expends.txt …
+2026-02-17 15:00:19,161  INFO        File size: 0.6 GB — streaming
+2026-02-17 15:00:23,096  INFO          … 500,000 rows committed to expenditures
+2026-02-17 15:00:27,077  INFO          … 1,000,000 rows committed to expenditures
+2026-02-17 15:00:31,032  INFO          … 1,500,000 rows committed to expenditures
+2026-02-17 15:00:34,919  INFO          … 2,000,000 rows committed to expenditures
+2026-02-17 15:00:38,712  INFO          … 2,500,000 rows committed to expenditures
+2026-02-17 15:00:41,367  INFO        →  2,907,092 rows  (0 errors)  [08expends.txt]
+2026-02-17 15:00:42,013  INFO        → 2,907,092 expenditure records
+2026-02-17 15:00:42,013  INFO        expends [2008] completed in 0.4 min
+2026-02-17 15:00:42,018  INFO      Importing candidates [2012] from 12cands.txt …
+2026-02-17 15:00:42,032  INFO        →      5,952 rows  (0 errors)  [12cands.txt]
+2026-02-17 15:00:42,052  INFO        → 5,952 candidate records
+2026-02-17 15:00:42,058  INFO      Importing committees [2012] from 12cmtes.txt …
+2026-02-17 15:00:42,095  INFO        →     14,445 rows  (0 errors)  [12cmtes.txt]
+2026-02-17 15:00:42,124  INFO        → 14,445 committee records
+2026-02-17 15:00:42,130  INFO      Importing pacs_to_candidates [2012] from 12pacs.txt …
+2026-02-17 15:00:43,300  INFO        →    394,627 rows  (0 errors)  [12pacs.txt]
+2026-02-17 15:00:43,806  INFO        → 394,627 PAC contribution records
+2026-02-17 15:00:43,811  INFO      Importing pac_to_pac [2012] from 12pac_other.txt …
+2026-02-17 15:00:44,651  INFO        →    137,302 rows  (0 errors)  [12pac_other.txt]
+2026-02-17 15:00:45,062  INFO        → 137,302 PAC-to-PAC records
+2026-02-17 15:00:45,068  INFO      Importing individual_contributions [2012] from 12indivs.txt …
+2026-02-17 15:00:45,069  INFO        File size: 0.9 GB — streaming in 50,000-row chunks
+2026-02-17 15:00:49,534  INFO          … 500,000 rows committed to individual_contributions
+2026-02-17 15:00:53,914  INFO          … 1,000,000 rows committed to individual_contributions
+2026-02-17 15:00:58,541  INFO          … 1,500,000 rows committed to individual_contributions
+2026-02-17 15:01:02,743  INFO          … 2,000,000 rows committed to individual_contributions
+2026-02-17 15:01:07,195  INFO          … 2,500,000 rows committed to individual_contributions
+2026-02-17 15:01:11,650  INFO          … 3,000,000 rows committed to individual_contributions
+2026-02-17 15:01:15,844  INFO          … 3,500,000 rows committed to individual_contributions
+2026-02-17 15:01:18,126  INFO        →  3,838,983 rows  (0 errors)  [12indivs.txt]
+2026-02-17 15:01:18,829  INFO        → 3,838,983 individual contribution records
+2026-02-17 15:01:18,829  INFO        indivs [2012] completed in 0.6 min
+2026-02-17 15:01:18,835  INFO      Importing expenditures [2012] from 12expends.txt …
+2026-02-17 15:01:18,836  INFO        File size: 1.5 GB — streaming
+2026-02-17 15:01:22,717  INFO          … 500,000 rows committed to expenditures
+2026-02-17 15:01:26,485  INFO          … 1,000,000 rows committed to expenditures
+2026-02-17 15:01:30,237  INFO          … 1,500,000 rows committed to expenditures
+2026-02-17 15:01:34,015  INFO          … 2,000,000 rows committed to expenditures
+2026-02-17 15:01:37,788  INFO          … 2,500,000 rows committed to expenditures
+2026-02-17 15:01:41,525  INFO          … 3,000,000 rows committed to expenditures
+2026-02-17 15:01:45,127  INFO          … 3,500,000 rows committed to expenditures
+2026-02-17 15:01:48,737  INFO          … 4,000,000 rows committed to expenditures
+2026-02-17 15:01:52,415  INFO          … 4,500,000 rows committed to expenditures
+2026-02-17 15:01:56,801  INFO          … 5,000,000 rows committed to expenditures
+2026-02-17 15:02:00,531  INFO          … 5,500,000 rows committed to expenditures
+2026-02-17 15:02:04,345  INFO          … 6,000,000 rows committed to expenditures
+2026-02-17 15:02:07,966  INFO          … 6,500,000 rows committed to expenditures
+2026-02-17 15:02:11,722  INFO          … 7,000,000 rows committed to expenditures
+2026-02-17 15:02:12,113  INFO        →  7,065,109 rows  (0 errors)  [12expends.txt]
+2026-02-17 15:02:12,268  INFO        → 7,065,109 expenditure records
+2026-02-17 15:02:12,268  INFO        expends [2012] completed in 0.9 min
+2026-02-17 15:02:12,274  INFO      Importing candidates [2016] from 16cands.txt …
+2026-02-17 15:02:12,292  INFO        →      7,716 rows  (0 errors)  [16cands.txt]
+2026-02-17 15:02:12,312  INFO        → 7,716 candidate records
+2026-02-17 15:02:12,316  INFO      Importing committees [2016] from 16cmtes.txt …
+2026-02-17 15:02:12,357  INFO        →     17,812 rows  (0 errors)  [16cmtes.txt]
+2026-02-17 15:02:12,393  INFO        → 17,812 committee records
+2026-02-17 15:02:12,399  INFO      Importing pacs_to_candidates [2016] from 16pacs.txt …
+2026-02-17 15:02:14,474  INFO          … 500,000 rows committed to pacs_to_candidates
+2026-02-17 15:02:14,509  INFO        →    519,955 rows  (0 errors)  [16pacs.txt]
+2026-02-17 15:02:14,550  INFO        → 519,955 PAC contribution records
+2026-02-17 15:02:14,555  INFO      Importing pac_to_pac [2016] from 16pac_other.txt …
+2026-02-17 15:02:15,645  INFO        →    157,225 rows  (0 errors)  [16pac_other.txt]
+2026-02-17 15:02:16,045  INFO        → 157,225 PAC-to-PAC records
+2026-02-17 15:02:16,051  INFO      Importing individual_contributions [2016] from 16indivs.txt …
+2026-02-17 15:02:16,051  INFO        File size: 4.2 GB — streaming in 50,000-row chunks
+2026-02-17 15:02:20,703  INFO          … 500,000 rows committed to individual_contributions
+2026-02-17 15:02:24,907  INFO          … 1,000,000 rows committed to individual_contributions
+2026-02-17 15:02:29,156  INFO          … 1,500,000 rows committed to individual_contributions
+2026-02-17 15:02:33,483  INFO          … 2,000,000 rows committed to individual_contributions
+2026-02-17 15:02:37,668  INFO          … 2,500,000 rows committed to individual_contributions
+2026-02-17 15:02:41,940  INFO          … 3,000,000 rows committed to individual_contributions
+2026-02-17 15:02:45,904  INFO          … 3,500,000 rows committed to individual_contributions
+2026-02-17 15:02:49,922  INFO          … 4,000,000 rows committed to individual_contributions
+2026-02-17 15:02:54,402  INFO          … 4,500,000 rows committed to individual_contributions
+2026-02-17 15:02:58,728  INFO          … 5,000,000 rows committed to individual_contributions
+2026-02-17 15:03:03,036  INFO          … 5,500,000 rows committed to individual_contributions
+2026-02-17 15:03:07,144  INFO          … 6,000,000 rows committed to individual_contributions
+2026-02-17 15:03:11,293  INFO          … 6,500,000 rows committed to individual_contributions
+2026-02-17 15:03:16,339  INFO          … 7,000,000 rows committed to individual_contributions
+2026-02-17 15:03:20,686  INFO          … 7,500,000 rows committed to individual_contributions
+2026-02-17 15:03:24,971  INFO          … 8,000,000 rows committed to individual_contributions
+2026-02-17 15:03:29,210  INFO          … 8,500,000 rows committed to individual_contributions
+2026-02-17 15:03:33,423  INFO          … 9,000,000 rows committed to individual_contributions
+2026-02-17 15:03:37,902  INFO          … 9,500,000 rows committed to individual_contributions
+2026-02-17 15:03:42,276  INFO          … 10,000,000 rows committed to individual_contributions
+2026-02-17 15:03:46,576  INFO          … 10,500,000 rows committed to individual_contributions
+2026-02-17 15:03:50,613  INFO          … 11,000,000 rows committed to individual_contributions
+2026-02-17 15:03:54,872  INFO          … 11,500,000 rows committed to individual_contributions
+2026-02-17 15:03:59,127  INFO          … 12,000,000 rows committed to individual_contributions
+2026-02-17 15:04:03,254  INFO          … 12,500,000 rows committed to individual_contributions
+2026-02-17 15:04:07,334  INFO          … 13,000,000 rows committed to individual_contributions
+2026-02-17 15:04:11,636  INFO          … 13,500,000 rows committed to individual_contributions
+2026-02-17 15:04:15,835  INFO          … 14,000,000 rows committed to individual_contributions
+2026-02-17 15:04:19,750  INFO          … 14,500,000 rows committed to individual_contributions
+2026-02-17 15:04:23,879  INFO          … 15,000,000 rows committed to individual_contributions
+2026-02-17 15:04:27,938  INFO          … 15,500,000 rows committed to individual_contributions
+2026-02-17 15:04:32,044  INFO          … 16,000,000 rows committed to individual_contributions
+2026-02-17 15:04:36,171  INFO          … 16,500,000 rows committed to individual_contributions
+2026-02-17 15:04:40,031  INFO          … 17,000,000 rows committed to individual_contributions
+2026-02-17 15:04:44,186  INFO          … 17,500,000 rows committed to individual_contributions
+2026-02-17 15:04:46,058  INFO        → 17,788,910 rows  (0 errors)  [16indivs.txt]
+2026-02-17 15:04:46,712  INFO        → 17,788,910 individual contribution records
+2026-02-17 15:04:46,713  INFO        indivs [2016] completed in 2.5 min
+2026-02-17 15:04:46,720  INFO      Importing expenditures [2016] from 16expends.txt …
+2026-02-17 15:04:46,721  INFO        File size: 5.5 GB — streaming
+2026-02-17 15:04:51,227  INFO          … 500,000 rows committed to expenditures
+2026-02-17 15:04:54,912  INFO          … 1,000,000 rows committed to expenditures
+2026-02-17 15:04:58,609  INFO          … 1,500,000 rows committed to expenditures
+2026-02-17 15:05:02,326  INFO          … 2,000,000 rows committed to expenditures
+2026-02-17 15:05:06,029  INFO          … 2,500,000 rows committed to expenditures
+2026-02-17 15:05:09,546  INFO          … 3,000,000 rows committed to expenditures
+2026-02-17 15:05:13,235  INFO          … 3,500,000 rows committed to expenditures
+2026-02-17 15:05:16,911  INFO          … 4,000,000 rows committed to expenditures
+2026-02-17 15:05:20,460  INFO          … 4,500,000 rows committed to expenditures
+2026-02-17 15:05:24,172  INFO          … 5,000,000 rows committed to expenditures
+2026-02-17 15:05:27,807  INFO          … 5,500,000 rows committed to expenditures
+2026-02-17 15:05:31,425  INFO          … 6,000,000 rows committed to expenditures
+2026-02-17 15:05:35,133  INFO          … 6,500,000 rows committed to expenditures
+2026-02-17 15:05:38,703  INFO          … 7,000,000 rows committed to expenditures
+2026-02-17 15:05:42,252  INFO          … 7,500,000 rows committed to expenditures
+2026-02-17 15:05:45,807  INFO          … 8,000,000 rows committed to expenditures
+2026-02-17 15:05:49,396  INFO          … 8,500,000 rows committed to expenditures
+2026-02-17 15:05:53,062  INFO          … 9,000,000 rows committed to expenditures
+2026-02-17 15:05:56,640  INFO          … 9,500,000 rows committed to expenditures
+2026-02-17 15:06:00,181  INFO          … 10,000,000 rows committed to expenditures
+2026-02-17 15:06:03,951  INFO          … 10,500,000 rows committed to expenditures
+2026-02-17 15:06:07,571  INFO          … 11,000,000 rows committed to expenditures
+2026-02-17 15:06:11,204  INFO          … 11,500,000 rows committed to expenditures
+2026-02-17 15:06:14,811  INFO          … 12,000,000 rows committed to expenditures
+2026-02-17 15:06:18,345  INFO          … 12,500,000 rows committed to expenditures
+2026-02-17 15:06:21,999  INFO          … 13,000,000 rows committed to expenditures
+2026-02-17 15:06:25,660  INFO          … 13,500,000 rows committed to expenditures
+2026-02-17 15:06:29,168  INFO          … 14,000,000 rows committed to expenditures
+2026-02-17 15:06:32,914  INFO          … 14,500,000 rows committed to expenditures
+2026-02-17 15:06:36,633  INFO          … 15,000,000 rows committed to expenditures
+2026-02-17 15:06:40,336  INFO          … 15,500,000 rows committed to expenditures
+2026-02-17 15:06:43,990  INFO          … 16,000,000 rows committed to expenditures
+2026-02-17 15:06:47,768  INFO          … 16,500,000 rows committed to expenditures
+2026-02-17 15:06:51,908  INFO          … 17,000,000 rows committed to expenditures
+2026-02-17 15:06:55,439  INFO          … 17,500,000 rows committed to expenditures
+2026-02-17 15:06:59,177  INFO          … 18,000,000 rows committed to expenditures
+2026-02-17 15:07:02,790  INFO          … 18,500,000 rows committed to expenditures
+2026-02-17 15:07:06,391  INFO          … 19,000,000 rows committed to expenditures
+2026-02-17 15:07:09,984  INFO          … 19,500,000 rows committed to expenditures
+2026-02-17 15:07:13,614  INFO          … 20,000,000 rows committed to expenditures
+2026-02-17 15:07:17,135  INFO          … 20,500,000 rows committed to expenditures
+2026-02-17 15:07:20,837  INFO          … 21,000,000 rows committed to expenditures
+2026-02-17 15:07:24,531  INFO          … 21,500,000 rows committed to expenditures
+2026-02-17 15:07:28,266  INFO          … 22,000,000 rows committed to expenditures
+2026-02-17 15:07:31,880  INFO          … 22,500,000 rows committed to expenditures
+2026-02-17 15:07:35,576  INFO          … 23,000,000 rows committed to expenditures
+2026-02-17 15:07:39,309  INFO          … 23,500,000 rows committed to expenditures
+2026-02-17 15:07:42,975  INFO          … 24,000,000 rows committed to expenditures
+2026-02-17 15:07:46,595  INFO          … 24,500,000 rows committed to expenditures
+2026-02-17 15:07:50,160  INFO          … 25,000,000 rows committed to expenditures
+2026-02-17 15:07:53,746  INFO          … 25,500,000 rows committed to expenditures
+2026-02-17 15:07:57,558  INFO          … 26,000,000 rows committed to expenditures
+2026-02-17 15:08:01,197  INFO          … 26,500,000 rows committed to expenditures
+2026-02-17 15:08:05,034  INFO          … 27,000,000 rows committed to expenditures
+2026-02-17 15:08:05,073  INFO        → 27,011,350 rows  (0 errors)  [16expends.txt]
+2026-02-17 15:08:05,117  INFO        → 27,011,350 expenditure records
+2026-02-17 15:08:05,117  INFO        expends [2016] completed in 3.3 min
+2026-02-17 15:08:05,122  INFO      Importing cmtes_527 from cmtes527.txt …
+2026-02-17 15:08:05,191  INFO        →     15,149 rows  (0 errors)  [cmtes527.txt]
+2026-02-17 15:08:05,258  INFO        → 15,149 527 committee records
+2026-02-17 15:08:05,267  INFO      Importing receipts_527 from rcpts527.txt …
+2026-02-17 15:08:05,267  INFO        File size: 1.1 GB — streaming
+2026-02-17 15:08:09,030  INFO          … 500,000 rows committed to receipts_527
+2026-02-17 15:08:12,873  INFO          … 1,000,000 rows committed to receipts_527
+2026-02-17 15:08:16,708  INFO          … 1,500,000 rows committed to receipts_527
+2026-02-17 15:08:20,391  INFO          … 2,000,000 rows committed to receipts_527
+2026-02-17 15:08:23,920  INFO          … 2,500,000 rows committed to receipts_527
+2026-02-17 15:08:27,527  INFO          … 3,000,000 rows committed to receipts_527
+2026-02-17 15:08:31,157  INFO          … 3,500,000 rows committed to receipts_527
+2026-02-17 15:08:34,858  INFO          … 4,000,000 rows committed to receipts_527
+2026-02-17 15:08:38,382  INFO          … 4,500,000 rows committed to receipts_527
+2026-02-17 15:08:39,571  INFO        →  4,715,026 rows  (0 errors)  [rcpts527.txt]
+2026-02-17 15:08:39,904  INFO        → 4,715,026 527 receipt records
+2026-02-17 15:08:39,905  INFO        rcpts527 completed in 0.6 min
+2026-02-17 15:08:39,910  INFO      Importing expenditures_527 from expends527.txt …
+2026-02-17 15:08:39,910  INFO        File size: 0.9 GB — streaming
+2026-02-17 15:08:43,968  INFO          … 500,000 rows committed to expenditures_527
+2026-02-17 15:08:48,025  INFO          … 1,000,000 rows committed to expenditures_527
+2026-02-17 15:08:51,676  INFO          … 1,500,000 rows committed to expenditures_527
+2026-02-17 15:08:55,248  INFO          … 2,000,000 rows committed to expenditures_527
+2026-02-17 15:08:58,861  INFO          … 2,500,000 rows committed to expenditures_527
+2026-02-17 15:09:02,436  INFO          … 3,000,000 rows committed to expenditures_527
+2026-02-17 15:09:06,263  INFO          … 3,500,000 rows committed to expenditures_527
+2026-02-17 15:09:09,129  INFO        →  3,999,783 rows  (0 errors)  [expends527.txt]
+2026-02-17 15:09:09,939  INFO        → 3,999,783 527 expenditure records
+2026-02-17 15:09:09,939  INFO        expends527 completed in 0.5 min
+2026-02-17 15:09:09,944  INFO      Creating indexes (this may take a few minutes) …
+2026-02-17 15:11:53,312  INFO        28 indexes created.
+2026-02-17 15:11:53,317  INFO      ============================================================
+2026-02-17 15:11:53,317  INFO      VALIDATION — row counts by table and cycle
+2026-02-17 15:11:53,318  INFO      ============================================================
+2026-02-17 15:11:53,321  INFO      
+  candidates:
+2026-02-17 15:11:53,321  INFO          2004:        3,843
+2026-02-17 15:11:53,322  INFO          2008:        4,108
+2026-02-17 15:11:53,322  INFO          2012:        5,952
+2026-02-17 15:11:53,322  INFO          2016:        7,716
+2026-02-17 15:11:53,326  INFO      
+  committees:
+2026-02-17 15:11:53,326  INFO          2004:        9,322
+2026-02-17 15:11:53,327  INFO          2008:       10,017
+2026-02-17 15:11:53,327  INFO          2012:       14,445
+2026-02-17 15:11:53,327  INFO          2016:       17,812
+2026-02-17 15:11:54,491  INFO      
+  individual_contributions:
+2026-02-17 15:11:54,491  INFO          2004:    2,537,689
+2026-02-17 15:11:54,491  INFO          2008:    3,636,349
+2026-02-17 15:11:54,491  INFO          2012:    3,838,983
+2026-02-17 15:11:54,491  INFO          2016:   17,788,910
+2026-02-17 15:11:54,554  INFO      
+  pacs_to_candidates:
+2026-02-17 15:11:54,554  INFO          2004:      245,041
+2026-02-17 15:11:54,554  INFO          2008:      304,315
+2026-02-17 15:11:54,554  INFO          2012:      394,627
+2026-02-17 15:11:54,554  INFO          2016:      519,955
+2026-02-17 15:11:54,578  INFO      
+  pac_to_pac:
+2026-02-17 15:11:54,578  INFO          2004:       89,121
+2026-02-17 15:11:54,578  INFO          2008:      110,648
+2026-02-17 15:11:54,578  INFO          2012:      137,302
+2026-02-17 15:11:54,579  INFO          2016:      157,225
+2026-02-17 15:11:56,209  INFO      
+  expenditures:
+2026-02-17 15:11:56,209  INFO          2004:    1,730,695
+2026-02-17 15:11:56,209  INFO          2008:    2,907,092
+2026-02-17 15:11:56,209  INFO          2012:    7,065,109
+2026-02-17 15:11:56,209  INFO          2016:   27,011,350
+2026-02-17 15:11:56,210  INFO      
+2026-02-17 15:11:56,213  INFO        cpi_factors                   :          4
+2026-02-17 15:11:56,215  INFO        category_codes                :        492
+2026-02-17 15:11:56,219  INFO        cmtes_527                     :     15,149
+2026-02-17 15:11:56,548  INFO        receipts_527                  :  4,715,026
+2026-02-17 15:11:56,556  INFO        expenditures_527              :  3,999,783
+2026-02-17 15:11:56,556  INFO      
+  Presidential candidate check (CID presence):
+2026-02-17 15:11:56,559  INFO          George W. Bush            (N00008072): found in cycles ['2004', '2008', '2012', '2016']
+2026-02-17 15:11:56,562  INFO          John Kerry                (N00004357): NOT FOUND ⚠
+2026-02-17 15:11:56,565  INFO          Barack Obama              (N00009638): found in cycles ['2008', '2008', '2012', '2016']
+2026-02-17 15:11:56,568  INFO          John McCain               (N00006424): found in cycles ['2008', '2008', '2012']
+2026-02-17 15:11:56,571  INFO          Mitt Romney               (N00000286): found in cycles ['2008', '2008', '2012', '2016']
+2026-02-17 15:11:56,573  INFO          Hillary Clinton           (N00000019): found in cycles ['2016', '2016']
+2026-02-17 15:11:56,576  INFO          Donald Trump              (N00023864): found in cycles ['2012', '2016']
+2026-02-17 15:11:56,576  INFO      ============================================================
+2026-02-17 15:11:59,110  INFO      
+Import pipeline complete in 12.9 minutes.
+2026-02-17 15:11:59,110  INFO      Checkpoint saved to /dartfs-hpc/rc/home/f/f006tzf/qss20_final/scripts/import_checkpoint.json
+2026-02-17 15:11:59,110  INFO      Next step: run  python scripts/02_clean.py

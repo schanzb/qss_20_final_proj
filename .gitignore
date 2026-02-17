@@ -3,3 +3,6 @@ download_checklist.md
 data/raw/*
 data/extracted/*
 data/raw.zip
+data/*.db
+data/*.db-shm
+data/*.db-wal
