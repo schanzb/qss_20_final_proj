@@ -13,6 +13,8 @@ Output: data/citizens_united.db
 OpenSecrets format: text fields wrapped in pipes (|value|), comma-separated.
 Uses csv.reader with quotechar='|' to correctly handle commas inside quoted fields.
 
+Developed with assistance by Claude Code.
+
 Runtime: ~3–5 hours (dominated by 16indivs.txt at 3.9 GB and 16expends.txt at 5.1 GB).
 """
 

@@ -1,111 +1,120 @@
-2026-02-17 15:20:52,592  INFO      ============================================================
-2026-02-17 15:20:52,592  INFO      Citizens United Cleaning Pipeline — 02_clean.py
-2026-02-17 15:20:52,592  INFO      Database: /dartfs-hpc/rc/home/f/f006tzf/qss20_final/data/citizens_united.db
-2026-02-17 15:20:52,592  INFO      ============================================================
-2026-02-17 15:20:54,441  INFO      All required raw tables present. Starting cleaning pipeline …
+2026-02-17 16:16:17,024  INFO      ============================================================
+2026-02-17 16:16:17,024  INFO      Citizens United Cleaning Pipeline — 02_clean.py
+2026-02-17 16:16:17,025  INFO      Database: /dartfs-hpc/rc/home/f/f006tzf/qss20_final/data/citizens_united.db
+2026-02-17 16:16:17,025  INFO      ============================================================
+2026-02-17 16:16:18,765  INFO      All required raw tables present. Starting cleaning pipeline …
 
-2026-02-17 15:20:54,441  INFO      Creating pres_candidates …
-2026-02-17 15:20:54,445  INFO        CREATE TABLE pres_candidates …
-2026-02-17 15:20:54,475  INFO          done in 0.0s
-2026-02-17 15:20:54,481  INFO        3463 presidential candidate records across all cycles
-2026-02-17 15:20:54,484  INFO          2004 Party=3: 54 candidates
-2026-02-17 15:20:54,484  INFO          2004 Party=D: 74 candidates
-2026-02-17 15:20:54,485  INFO          2004 Party=I: 52 candidates
-2026-02-17 15:20:54,485  INFO          2004 Party=L: 7 candidates
-2026-02-17 15:20:54,485  INFO          2004 Party=R: 31 candidates
-2026-02-17 15:20:54,485  INFO          2004 Party=U: 24 candidates
-2026-02-17 15:20:54,485  INFO          2008 Party=3: 87 candidates
-2026-02-17 15:20:54,485  INFO          2008 Party=D: 75 candidates
-2026-02-17 15:20:54,485  INFO          2008 Party=I: 94 candidates
-2026-02-17 15:20:54,485  INFO          2008 Party=L: 15 candidates
-2026-02-17 15:20:54,485  INFO          2008 Party=R: 92 candidates
-2026-02-17 15:20:54,485  INFO          2008 Party=U: 17 candidates
-2026-02-17 15:20:54,485  INFO          2012 Party=3: 158 candidates
-2026-02-17 15:20:54,485  INFO          2012 Party=D: 71 candidates
-2026-02-17 15:20:54,485  INFO          2012 Party=I: 128 candidates
-2026-02-17 15:20:54,485  INFO          2012 Party=L: 21 candidates
-2026-02-17 15:20:54,485  INFO          2012 Party=R: 161 candidates
-2026-02-17 15:20:54,485  INFO          2012 Party=U: 38 candidates
-2026-02-17 15:20:54,485  INFO          2016 Party=3: 781 candidates
-2026-02-17 15:20:54,485  INFO          2016 Party=D: 290 candidates
-2026-02-17 15:20:54,485  INFO          2016 Party=I: 648 candidates
-2026-02-17 15:20:54,485  INFO          2016 Party=L: 72 candidates
-2026-02-17 15:20:54,485  INFO          2016 Party=R: 390 candidates
-2026-02-17 15:20:54,485  INFO          2016 Party=U: 83 candidates
-2026-02-17 15:20:54,485  INFO      
-2026-02-17 15:20:54,485  INFO      Creating indivs_to_pres …
-2026-02-17 15:20:54,489  INFO        CREATE TABLE indivs_to_pres …
-2026-02-17 15:21:31,624  INFO          done in 37.1s
-2026-02-17 15:21:31,679  INFO        6,812,993 individual contribution records to presidential candidates
-2026-02-17 15:21:33,620  INFO          2004:  550,185 records, $0.70B (2024 $)
-2026-02-17 15:21:33,636  INFO          2008: 1,124,642 records, $1.04B (2024 $)
-2026-02-17 15:21:33,636  INFO          2012: 1,155,533 records, $1.00B (2024 $)
-2026-02-17 15:21:33,636  INFO          2016: 3,982,633 records, $0.82B (2024 $)
-2026-02-17 15:21:33,636  INFO      
-2026-02-17 15:21:33,637  INFO      Creating pacs_to_pres …
-2026-02-17 15:21:33,643  INFO        CREATE TABLE pacs_to_pres …
-2026-02-17 15:21:37,772  INFO          done in 4.1s
-2026-02-17 15:21:37,776  INFO        214,067 PAC contribution/IE records to presidential candidates
-2026-02-17 15:21:37,858  INFO          2004 DI=D:    1,616 records, $0.006B (2024 $)
-2026-02-17 15:21:37,859  INFO          2004 DI=I:   12,304 records, $0.416B (2024 $)
-2026-02-17 15:21:37,859  INFO          2008 DI=D:    1,485 records, $0.005B (2024 $)
-2026-02-17 15:21:37,859  INFO          2008 DI=I:   16,520 records, $0.342B (2024 $)
-2026-02-17 15:21:37,859  INFO          2012 DI=D:      753 records, $0.003B (2024 $)
-2026-02-17 15:21:37,859  INFO          2012 DI=I:   55,123 records, $0.895B (2024 $)
-2026-02-17 15:21:37,859  INFO          2016 DI=D:    1,125 records, $0.003B (2024 $)
-2026-02-17 15:21:37,860  INFO          2016 DI=I:  114,879 records, $0.905B (2024 $)
-2026-02-17 15:21:37,860  INFO      
-2026-02-17 15:21:37,860  INFO      Creating exp527_aligned …
-2026-02-17 15:21:37,987  INFO        CREATE TABLE exp527_aligned …
-2026-02-17 15:21:38,007  INFO          done in 0.0s
-2026-02-17 15:21:38,013  INFO        0 527 expenditure records (federal, relevant cycles)
-2026-02-17 15:21:38,015  INFO      
-2026-02-17 15:21:38,016  INFO      Creating partisan_spending_monthly …
-2026-02-17 15:21:38,021  INFO        CREATE TABLE partisan_spending_monthly …
-2026-02-17 15:21:47,830  INFO          done in 9.8s
-2026-02-17 15:21:47,835  INFO        729 monthly spending aggregate rows
-2026-02-17 15:21:47,835  INFO        Summary by era and partisan direction (2024 $B):
-2026-02-17 15:21:47,838  INFO          post_CU    pro_D       : $1.72B
-2026-02-17 15:21:47,838  INFO          post_CU    pro_R       : $1.90B
-2026-02-17 15:21:47,839  INFO          post_CU    unaligned   : $0.02B
-2026-02-17 15:21:47,839  INFO          pre_CU     pro_D       : $1.51B
-2026-02-17 15:21:47,839  INFO          pre_CU     pro_R       : $0.99B
-2026-02-17 15:21:47,839  INFO          pre_CU     unaligned   : $0.01B
-2026-02-17 15:21:47,839  INFO      
-2026-02-17 15:21:47,839  INFO      Creating partisan_spending_weekly …
-2026-02-17 15:21:47,843  INFO        CREATE TABLE partisan_spending_weekly …
-2026-02-17 15:22:01,853  INFO          done in 14.0s
-2026-02-17 15:22:01,861  INFO        2,754 weekly spending aggregate rows
-2026-02-17 15:22:01,861  INFO      
-2026-02-17 15:22:01,861  INFO      Creating derived table indexes …
-2026-02-17 15:22:15,656  INFO        23 derived indexes created
-2026-02-17 15:22:15,656  INFO      
-2026-02-17 15:22:15,656  INFO      ============================================================
-2026-02-17 15:22:15,656  INFO      VALIDATION — derived table checks
-2026-02-17 15:22:15,656  INFO      ============================================================
-2026-02-17 15:22:15,662  INFO        [PASS] pres_candidates has rows: 3463 (expected >= 5)
-2026-02-17 15:22:15,665  INFO        [PASS] All expected eras present: 2 (expected == 2)
-2026-02-17 15:22:15,665  INFO        Key candidate presence check:
-2026-02-17 15:22:15,668  INFO          G.W. Bush (2004): FOUND
-2026-02-17 15:22:15,671  INFO          Obama (2008): FOUND
-2026-02-17 15:22:15,674  INFO          Obama (2012): FOUND
-2026-02-17 15:22:16,365  INFO        [PASS] No PAC-recipient rows in indivs_to_pres: 0 (expected == 0)
-2026-02-17 15:22:17,212  INFO        [PASS] indivs_to_pres has only known eras: 0 (expected == 0)
-2026-02-17 15:22:17,230  INFO        [PASS] pacs_to_pres has only known eras: 0 (expected == 0)
-2026-02-17 15:22:17,569  INFO        [PASS] indivs partisan coverage (pro_R + pro_D fraction): 0.9941655598354497 (expected >= 0.9)
-2026-02-17 15:22:17,569  INFO        Partisan spending totals (2024 $B):
-2026-02-17 15:22:17,573  INFO          post_CU    pro_D       : $1.72B
-2026-02-17 15:22:17,573  INFO          post_CU    pro_R       : $1.9B
-2026-02-17 15:22:17,573  INFO          post_CU    unaligned   : $0.02B
-2026-02-17 15:22:17,573  INFO          pre_CU     pro_D       : $1.51B
-2026-02-17 15:22:17,573  INFO          pre_CU     pro_R       : $0.99B
-2026-02-17 15:22:17,573  INFO          pre_CU     unaligned   : $0.01B
-2026-02-17 15:22:17,575  INFO        [FAIL ⚠] exp527_aligned has all 4 cycles: 0 (expected == 4)
-2026-02-17 15:22:17,577  INFO        [PASS] partisan_spending_monthly has rows: 729 (expected >= 1)
-2026-02-17 15:22:17,579  INFO        [PASS] partisan_spending_weekly has rows: 2754 (expected >= 1)
-2026-02-17 15:22:17,579  INFO      
+2026-02-17 16:16:18,765  INFO      Creating pres_candidates …
+2026-02-17 16:16:18,782  INFO        CREATE TABLE pres_candidates …
+2026-02-17 16:16:18,815  INFO          done in 0.0s
+2026-02-17 16:16:18,819  INFO        3463 presidential candidate records across all cycles
+2026-02-17 16:16:18,822  INFO          2004 Party=3: 54 candidates
+2026-02-17 16:16:18,822  INFO          2004 Party=D: 74 candidates
+2026-02-17 16:16:18,823  INFO          2004 Party=I: 52 candidates
+2026-02-17 16:16:18,823  INFO          2004 Party=L: 7 candidates
+2026-02-17 16:16:18,823  INFO          2004 Party=R: 31 candidates
+2026-02-17 16:16:18,823  INFO          2004 Party=U: 24 candidates
+2026-02-17 16:16:18,823  INFO          2008 Party=3: 87 candidates
+2026-02-17 16:16:18,823  INFO          2008 Party=D: 75 candidates
+2026-02-17 16:16:18,823  INFO          2008 Party=I: 94 candidates
+2026-02-17 16:16:18,823  INFO          2008 Party=L: 15 candidates
+2026-02-17 16:16:18,823  INFO          2008 Party=R: 92 candidates
+2026-02-17 16:16:18,823  INFO          2008 Party=U: 17 candidates
+2026-02-17 16:16:18,823  INFO          2012 Party=3: 158 candidates
+2026-02-17 16:16:18,823  INFO          2012 Party=D: 71 candidates
+2026-02-17 16:16:18,823  INFO          2012 Party=I: 128 candidates
+2026-02-17 16:16:18,823  INFO          2012 Party=L: 21 candidates
+2026-02-17 16:16:18,823  INFO          2012 Party=R: 161 candidates
+2026-02-17 16:16:18,823  INFO          2012 Party=U: 38 candidates
+2026-02-17 16:16:18,823  INFO          2016 Party=3: 781 candidates
+2026-02-17 16:16:18,823  INFO          2016 Party=D: 290 candidates
+2026-02-17 16:16:18,823  INFO          2016 Party=I: 648 candidates
+2026-02-17 16:16:18,823  INFO          2016 Party=L: 72 candidates
+2026-02-17 16:16:18,823  INFO          2016 Party=R: 390 candidates
+2026-02-17 16:16:18,823  INFO          2016 Party=U: 83 candidates
+2026-02-17 16:16:18,823  INFO      
+2026-02-17 16:16:18,823  INFO      Creating indivs_to_pres …
+2026-02-17 16:16:31,732  INFO        CREATE TABLE indivs_to_pres …
+2026-02-17 16:16:59,566  INFO          done in 27.8s
+2026-02-17 16:16:59,613  INFO        6,812,993 individual contribution records to presidential candidates
+2026-02-17 16:17:01,457  INFO          2004:  550,185 records, $0.70B (2024 $)
+2026-02-17 16:17:01,484  INFO          2008: 1,124,642 records, $1.04B (2024 $)
+2026-02-17 16:17:01,484  INFO          2012: 1,155,533 records, $1.00B (2024 $)
+2026-02-17 16:17:01,484  INFO          2016: 3,982,633 records, $0.82B (2024 $)
+2026-02-17 16:17:01,484  INFO      
+2026-02-17 16:17:01,485  INFO      Creating pacs_to_pres …
+2026-02-17 16:17:01,883  INFO        CREATE TABLE pacs_to_pres …
+2026-02-17 16:17:04,974  INFO          done in 3.1s
+2026-02-17 16:17:04,977  INFO        214,067 PAC contribution/IE records to presidential candidates
+2026-02-17 16:17:05,054  INFO          2004 DI=D:    1,616 records, $0.006B (2024 $)
+2026-02-17 16:17:05,055  INFO          2004 DI=I:   12,304 records, $0.416B (2024 $)
+2026-02-17 16:17:05,055  INFO          2008 DI=D:    1,485 records, $0.005B (2024 $)
+2026-02-17 16:17:05,055  INFO          2008 DI=I:   16,520 records, $0.342B (2024 $)
+2026-02-17 16:17:05,055  INFO          2012 DI=D:      753 records, $0.003B (2024 $)
+2026-02-17 16:17:05,056  INFO          2012 DI=I:   55,123 records, $0.895B (2024 $)
+2026-02-17 16:17:05,056  INFO          2016 DI=D:    1,125 records, $0.003B (2024 $)
+2026-02-17 16:17:05,056  INFO          2016 DI=I:  114,879 records, $0.905B (2024 $)
+2026-02-17 16:17:05,056  INFO      
+2026-02-17 16:17:05,056  INFO      Creating exp527_aligned …
+2026-02-17 16:17:05,148  INFO        CREATE TABLE exp527_aligned …
+2026-02-17 16:17:07,929  INFO          done in 2.8s
+2026-02-17 16:17:07,933  INFO        155,146 527 expenditure records (federal, relevant cycles)
+2026-02-17 16:17:08,013  INFO          2004 pro_D       :   24,875 records, $0.641B (2024 $)
+2026-02-17 16:17:08,015  INFO          2004 pro_R       :   10,604 records, $0.188B (2024 $)
+2026-02-17 16:17:08,015  INFO          2004 unaligned   :    3,978 records, $0.024B (2024 $)
+2026-02-17 16:17:08,015  INFO          2008 pro_D       :   33,667 records, $0.224B (2024 $)
+2026-02-17 16:17:08,015  INFO          2008 pro_R       :    9,480 records, $0.108B (2024 $)
+2026-02-17 16:17:08,015  INFO          2008 unaligned   :    4,615 records, $0.015B (2024 $)
+2026-02-17 16:17:08,016  INFO          2012 pro_D       :   54,030 records, $0.120B (2024 $)
+2026-02-17 16:17:08,016  INFO          2012 pro_R       :   11,040 records, $0.069B (2024 $)
+2026-02-17 16:17:08,016  INFO          2012 unaligned   :    2,857 records, $0.019B (2024 $)
+2026-02-17 16:17:08,016  INFO      
+2026-02-17 16:17:08,016  INFO      Creating partisan_spending_monthly …
+2026-02-17 16:17:08,026  INFO        CREATE TABLE partisan_spending_monthly …
+2026-02-17 16:17:18,112  INFO          done in 10.1s
+2026-02-17 16:17:18,117  INFO        945 monthly spending aggregate rows
+2026-02-17 16:17:18,117  INFO        Summary by era and partisan direction (2024 $B):
+2026-02-17 16:17:18,120  INFO          post_CU    pro_D       : $1.84B
+2026-02-17 16:17:18,120  INFO          post_CU    pro_R       : $1.96B
+2026-02-17 16:17:18,120  INFO          post_CU    unaligned   : $0.04B
+2026-02-17 16:17:18,120  INFO          pre_CU     pro_D       : $2.38B
+2026-02-17 16:17:18,120  INFO          pre_CU     pro_R       : $1.29B
+2026-02-17 16:17:18,120  INFO          pre_CU     unaligned   : $0.05B
+2026-02-17 16:17:18,120  INFO      
+2026-02-17 16:17:18,120  INFO      Creating partisan_spending_weekly …
+2026-02-17 16:17:18,127  INFO        CREATE TABLE partisan_spending_weekly …
+2026-02-17 16:17:31,162  INFO          done in 13.0s
+2026-02-17 16:17:31,167  INFO        3,708 weekly spending aggregate rows
+2026-02-17 16:17:31,167  INFO      
+2026-02-17 16:17:31,168  INFO      Creating derived table indexes …
+2026-02-17 16:17:43,143  INFO        23 derived indexes created
+2026-02-17 16:17:43,143  INFO      
+2026-02-17 16:17:43,143  INFO      ============================================================
+2026-02-17 16:17:43,143  INFO      VALIDATION — derived table checks
+2026-02-17 16:17:43,143  INFO      ============================================================
+2026-02-17 16:17:43,148  INFO        [PASS] pres_candidates has rows: 3463 (expected >= 5)
+2026-02-17 16:17:43,150  INFO        [PASS] All expected eras present: 2 (expected == 2)
+2026-02-17 16:17:43,150  INFO        Key candidate presence check:
+2026-02-17 16:17:43,152  INFO          G.W. Bush (2004): FOUND
+2026-02-17 16:17:43,155  INFO          Obama (2008): FOUND
+2026-02-17 16:17:43,157  INFO          Obama (2012): FOUND
+2026-02-17 16:17:43,778  INFO        [PASS] No PAC-recipient rows in indivs_to_pres: 0 (expected == 0)
+2026-02-17 16:17:44,516  INFO        [PASS] indivs_to_pres has only known eras: 0 (expected == 0)
+2026-02-17 16:17:44,534  INFO        [PASS] pacs_to_pres has only known eras: 0 (expected == 0)
+2026-02-17 16:17:44,882  INFO        [PASS] indivs partisan coverage (pro_R + pro_D fraction): 0.9941655598354497 (expected >= 0.9)
+2026-02-17 16:17:44,882  INFO        Partisan spending totals (2024 $B):
+2026-02-17 16:17:44,885  INFO          post_CU    pro_D       : $1.84B
+2026-02-17 16:17:44,885  INFO          post_CU    pro_R       : $1.96B
+2026-02-17 16:17:44,885  INFO          post_CU    unaligned   : $0.04B
+2026-02-17 16:17:44,885  INFO          pre_CU     pro_D       : $2.38B
+2026-02-17 16:17:44,885  INFO          pre_CU     pro_R       : $1.29B
+2026-02-17 16:17:44,885  INFO          pre_CU     unaligned   : $0.05B
+2026-02-17 16:17:44,895  INFO        [FAIL ⚠] exp527_aligned has all 4 cycles: 3 (expected == 4)
+2026-02-17 16:17:44,898  INFO        [PASS] partisan_spending_monthly has rows: 945 (expected >= 1)
+2026-02-17 16:17:44,900  INFO        [PASS] partisan_spending_weekly has rows: 3708 (expected >= 1)
+2026-02-17 16:17:44,900  INFO      
   Results: 8 passed, 1 failed
-2026-02-17 15:22:17,580  INFO      ============================================================
-2026-02-17 15:22:18,345  INFO      
-Cleaning pipeline complete in 1.4 minutes.
-2026-02-17 15:22:18,345  INFO      Next step: run  python scripts/03_q1_spending.py
+2026-02-17 16:17:44,900  INFO      ============================================================
+2026-02-17 16:17:45,808  INFO      
+Cleaning pipeline complete in 1.5 minutes.
+2026-02-17 16:17:45,808  INFO      Next step: run  python scripts/03_q1_spending.py

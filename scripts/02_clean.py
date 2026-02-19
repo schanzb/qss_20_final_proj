@@ -18,6 +18,9 @@ Filters applied throughout:
   • Type IN (...) for individual_contributions (valid FEC transaction types)
   • Anti-double-counting: individuals TO PACs excluded when joining with PAC data
 
+Developed with assistance by Claude Code.
+
+
 Amounts are inflation-adjusted to constant 2024 dollars via cpi_factors table.
 """
 
@@ -114,16 +117,30 @@ WEEK_EXPR  = f"strftime('%Y-%W', {ISO_DATE})"
 # ── 527 cycle expression ──────────────────────────────────────────────────────
 # QuarterYr format: Q[1-4][YY] (e.g. Q408 = Q4 2008, Q216 = Q2 2016).
 # Extract 2-digit year: substr(QuarterYr, 3, 2)
-# Map to election cycle: only keep 2003/2004 → '2004', etc.
+#
+# Cycle window: 3 years per election (election year + 2 years prior).
+# e.g. 2008 cycle covers 2006, 2007, 2008.
+#
+# NOTE: campaign finance tables (pacs_to_candidates, individual_contributions)
+# use OpenSecrets' pre-assigned Cycle field from the raw files, which only
+# cover the standard 2-year FEC period (odd year + election year).  The
+# midterm cycle files (06, 10, 14) are not present in the raw data, so
+# extending those tables to a 3-year window would require downloading
+# additional source files.  The 3-year window therefore applies to 527 data
+# only, where the full filing history is available in a single file.
 
 CYCLE_FROM_QUARTER = """
     CASE CAST('20' || substr(QuarterYr, 3, 2) AS INTEGER)
+        WHEN 2002 THEN '2004'
         WHEN 2003 THEN '2004'
         WHEN 2004 THEN '2004'
+        WHEN 2006 THEN '2008'
         WHEN 2007 THEN '2008'
         WHEN 2008 THEN '2008'
+        WHEN 2010 THEN '2012'
         WHEN 2011 THEN '2012'
         WHEN 2012 THEN '2012'
+        WHEN 2014 THEN '2016'
         WHEN 2015 THEN '2016'
         WHEN 2016 THEN '2016'
         ELSE NULL
@@ -404,7 +421,7 @@ def create_exp527_aligned(conn: sqlite3.Connection) -> None:
             END                                               AS era,
             CAST(NULLIF(e.Amount, '') AS REAL) * cf.factor    AS Amount_2024
         FROM expenditures_527 e
-        LEFT JOIN _tmp_cmte527_latest cv ON e.EIN = cv.EIN
+        LEFT JOIN _tmp_cmte527_latest cv ON e.PaidByEIN = cv.EIN
         LEFT JOIN cpi_factors cf ON ({CYCLE_FROM_QUARTER.strip()}) = cf.Cycle
         WHERE
             cv.Ctype = 'F'

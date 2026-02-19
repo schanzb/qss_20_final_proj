@@ -1,0 +1,22 @@
+data/raw/campaign_finance should contain the following raw files to run correctly:
+
+12pac_other.txt
+16cands.txt
+16pacs.txt
+16cmtes.txt
+04pacs.txt
+12indivs.txt
+08indivs.txt
+08pac_other.txt
+12cmtes.txt
+08cands.txt
+08pacs.txt
+04cmtes.txt
+04pac_other.txt
+16pac_other.txt
+08cmtes.txt
+04indivs.txt
+04cands.txt
+12cands.txt
+16indivs.txt
+12pacs.txt
