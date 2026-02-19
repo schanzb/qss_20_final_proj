@@ -114,35 +114,35 @@ MONTH_EXPR = "substr(Date, 1, 2)"
 WEEK_EXPR  = f"strftime('%Y-%W', {ISO_DATE})"
 
 
-# ── 527 cycle expression ──────────────────────────────────────────────────────
-# QuarterYr format: Q[1-4][YY] (e.g. Q408 = Q4 2008, Q216 = Q2 2016).
-# Extract 2-digit year: substr(QuarterYr, 3, 2)
+# ── 527 cycle assignment — transaction-date-based ─────────────────────────────
+# The 527 files are a single continuous dataset spanning all years, not
+# pre-split by cycle like the FEC campaign finance files.  We assign each
+# expenditure to a presidential cycle by filtering on the transaction Date
+# field (MM/DD/YYYY in the raw data, converted to ISO for BETWEEN comparison).
 #
-# Cycle window: 3 years per election (election year + 2 years prior).
-# e.g. 2008 cycle covers 2006, 2007, 2008.
+# Window definition: Jan 1 of the odd year through presidential election day.
+# This matches the coverage of the OpenSecrets campaign finance files (which
+# cover the standard FEC 2-year period: odd year + election year, e.g.
+# 2007–2008 for the 2008 cycle).  The 527 window ends on election day rather
+# than Dec 31 to exclude post-election activity, which is not relevant to
+# campaign spending analysis.
 #
-# NOTE: campaign finance tables (pacs_to_candidates, individual_contributions)
-# use OpenSecrets' pre-assigned Cycle field from the raw files, which only
-# cover the standard 2-year FEC period (odd year + election year).  The
-# midterm cycle files (06, 10, 14) are not present in the raw data, so
-# extending those tables to a 3-year window would require downloading
-# additional source files.  The 3-year window therefore applies to 527 data
-# only, where the full filing history is available in a single file.
+#   2004: 2003-01-01 – 2004-11-02
+#   2008: 2007-01-01 – 2008-11-04
+#   2012: 2011-01-01 – 2012-11-06
+#   2016: 2015-01-01 – 2016-11-08
+#
+# Only the four presidential cycles we study are included; all other dates
+# map to NULL and are excluded from derived tables.
 
-CYCLE_FROM_QUARTER = """
-    CASE CAST('20' || substr(QuarterYr, 3, 2) AS INTEGER)
-        WHEN 2002 THEN '2004'
-        WHEN 2003 THEN '2004'
-        WHEN 2004 THEN '2004'
-        WHEN 2006 THEN '2008'
-        WHEN 2007 THEN '2008'
-        WHEN 2008 THEN '2008'
-        WHEN 2010 THEN '2012'
-        WHEN 2011 THEN '2012'
-        WHEN 2012 THEN '2012'
-        WHEN 2014 THEN '2016'
-        WHEN 2015 THEN '2016'
-        WHEN 2016 THEN '2016'
+_ISO527 = "substr(Date, 7, 4) || '-' || substr(Date, 1, 2) || '-' || substr(Date, 4, 2)"
+
+CYCLE_FROM_DATE_527 = f"""
+    CASE
+        WHEN {_ISO527} BETWEEN '2003-01-01' AND '2004-11-02' THEN '2004'
+        WHEN {_ISO527} BETWEEN '2007-01-01' AND '2008-11-04' THEN '2008'
+        WHEN {_ISO527} BETWEEN '2011-01-01' AND '2012-11-06' THEN '2012'
+        WHEN {_ISO527} BETWEEN '2015-01-01' AND '2016-11-08' THEN '2016'
         ELSE NULL
     END
 """
@@ -412,8 +412,8 @@ def create_exp527_aligned(conn: sqlite3.Connection) -> None:
                 WHEN 'L' THEN 'pro_D'
                 ELSE 'unaligned'
             END                                               AS partisan_direction,
-            ({CYCLE_FROM_QUARTER.strip()})                    AS Cycle,
-            CASE ({CYCLE_FROM_QUARTER.strip()})
+            ({CYCLE_FROM_DATE_527.strip()})                    AS Cycle,
+            CASE ({CYCLE_FROM_DATE_527.strip()})
                 WHEN '2004' THEN 'pre_CU'
                 WHEN '2008' THEN 'pre_CU'
                 WHEN '2012' THEN 'post_CU'
@@ -422,10 +422,10 @@ def create_exp527_aligned(conn: sqlite3.Connection) -> None:
             CAST(NULLIF(e.Amount, '') AS REAL) * cf.factor    AS Amount_2024
         FROM expenditures_527 e
         LEFT JOIN _tmp_cmte527_latest cv ON e.PaidByEIN = cv.EIN
-        LEFT JOIN cpi_factors cf ON ({CYCLE_FROM_QUARTER.strip()}) = cf.Cycle
+        LEFT JOIN cpi_factors cf ON ({CYCLE_FROM_DATE_527.strip()}) = cf.Cycle
         WHERE
             cv.Ctype = 'F'
-            AND ({CYCLE_FROM_QUARTER.strip()}) IS NOT NULL
+            AND ({CYCLE_FROM_DATE_527.strip()}) IS NOT NULL
     """)
 
     # Clean up temp table
