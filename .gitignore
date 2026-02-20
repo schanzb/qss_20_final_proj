@@ -1,6 +1,8 @@
+HANDOFF.md
 CLAUDE.md
 download_checklist.md
 .venv/*
+venv/*
 .claude/*
 
 # Large data files — ignore contents but keep directory structure visible on GitHub
