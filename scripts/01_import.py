@@ -2,7 +2,7 @@
 """
 01_import.py — Import raw OpenSecrets bulk data into SQLite
 
-Imports all data for election cycles 2004, 2008, 2012, 2016 from:
+Imports all data for election cycles 2004, 2008, 2012, 2020 from:
   data/raw/campaign_finance/ — candidates, committees, individuals, PACs, expenditures
   data/raw/expend/           — FEC expenditures
   data/raw/527/              — 527 organization data
@@ -15,7 +15,7 @@ Uses csv.reader with quotechar='|' to correctly handle commas inside quoted fiel
 
 Developed with assistance by Claude Code.
 
-Runtime: ~3–5 hours (dominated by 16indivs.txt at 3.9 GB and 16expends.txt at 5.1 GB).
+Runtime: ~3–5 hours (dominated by 20indivs.txt and 20expends.txt streaming).
 """
 
 import csv
@@ -39,8 +39,8 @@ DB_PATH = DATA_DIR / "citizens_united.db"
 CHECKPOINT_PATH = SCRIPT_DIR / "import_checkpoint.json"
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-CYCLES = ["04", "08", "12", "16"]          # 2-digit year suffixes
-CYCLE_MAP = {"04": "2004", "08": "2008", "12": "2012", "16": "2016"}
+CYCLES = ["04", "08", "12", "20"]          # 2-digit year suffixes
+CYCLE_MAP = {"04": "2004", "08": "2008", "12": "2012", "20": "2020"}
 
 CHUNK_SIZE = 50_000       # rows per chunk for streaming
 COMMIT_EVERY = 500_000    # rows between commits for large files
@@ -51,7 +51,7 @@ CPI_FACTORS = {
     "2004": 1.6653,
     "2008": 1.4611,
     "2012": 1.3607,
-    "2016": 1.3018,
+    "2020": 1.2124,   # confirmed from inflation.csv: $100 in 2020 = $121.24 in 2024
 }
 
 # ── Column schemas ────────────────────────────────────────────────────────────
@@ -651,8 +651,8 @@ def validate_import(conn: sqlite3.Connection) -> None:
         "N00009638": "Barack Obama",
         "N00006424": "John McCain",
         "N00000286": "Mitt Romney",
-        "N00000019": "Hillary Clinton",
-        "N00023864": "Donald Trump",
+        "N00001669": "Joe Biden",          # 2020
+        "N00023864": "Donald Trump",       # 2020 (ran again)
     }
     for cid, name in known_pres.items():
         row = conn.execute(

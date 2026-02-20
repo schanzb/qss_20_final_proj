@@ -114,6 +114,34 @@ MONTH_EXPR = "substr(Date, 1, 2)"
 WEEK_EXPR  = f"strftime('%Y-%W', {ISO_DATE})"
 
 
+# ── Election day cutoffs ──────────────────────────────────────────────────────
+# Trim post-election activity from campaign finance tables to match 527 windows,
+# which already end on election day via CYCLE_FROM_DATE_527.
+ELECTION_DAYS = {
+    "2004": "2004-11-02",
+    "2008": "2008-11-04",
+    "2012": "2012-11-06",
+    "2020": "2020-11-03",
+}
+
+
+def election_day_filter(cycle_col: str, date_col: str) -> str:
+    """Return a SQL snippet that keeps rows on or before election day.
+
+    OpenSecrets dates are MM/DD/YYYY; we convert inline for comparison.
+    Rows with NULL or empty dates are kept (permissive on missing dates).
+    """
+    cases = "\n            ".join(
+        f"WHEN {cycle_col} = '{cy}' THEN '{day}'"
+        for cy, day in ELECTION_DAYS.items()
+    )
+    return f"""(
+        {date_col} IS NULL OR {date_col} = '' OR
+        substr({date_col},7,4)||'-'||substr({date_col},1,2)||'-'||substr({date_col},4,2)
+            <= CASE {cases} END
+    )"""
+
+
 # ── 527 cycle assignment — transaction-date-based ─────────────────────────────
 # The 527 files are a single continuous dataset spanning all years, not
 # pre-split by cycle like the FEC campaign finance files.  We assign each
@@ -130,7 +158,7 @@ WEEK_EXPR  = f"strftime('%Y-%W', {ISO_DATE})"
 #   2004: 2003-01-01 – 2004-11-02
 #   2008: 2007-01-01 – 2008-11-04
 #   2012: 2011-01-01 – 2012-11-06
-#   2016: 2015-01-01 – 2016-11-08
+#   2020: 2019-01-01 – 2020-11-03
 #
 # Only the four presidential cycles we study are included; all other dates
 # map to NULL and are excluded from derived tables.
@@ -142,7 +170,7 @@ CYCLE_FROM_DATE_527 = f"""
         WHEN {_ISO527} BETWEEN '2003-01-01' AND '2004-11-02' THEN '2004'
         WHEN {_ISO527} BETWEEN '2007-01-01' AND '2008-11-04' THEN '2008'
         WHEN {_ISO527} BETWEEN '2011-01-01' AND '2012-11-06' THEN '2012'
-        WHEN {_ISO527} BETWEEN '2015-01-01' AND '2016-11-08' THEN '2016'
+        WHEN {_ISO527} BETWEEN '2019-01-01' AND '2020-11-03' THEN '2020'
         ELSE NULL
     END
 """
@@ -152,7 +180,7 @@ ERA_FROM_CYCLE = """
         WHEN '2004' THEN 'pre_CU'
         WHEN '2008' THEN 'pre_CU'
         WHEN '2012' THEN 'post_CU'
-        WHEN '2016' THEN 'post_CU'
+        WHEN '2020' THEN 'post_CU'
     END
 """
 
@@ -182,7 +210,7 @@ def create_pres_candidates(conn: sqlite3.Connection) -> None:
                 WHEN '2004' THEN 'pre_CU'
                 WHEN '2008' THEN 'pre_CU'
                 WHEN '2012' THEN 'post_CU'
-                WHEN '2016' THEN 'post_CU'
+                WHEN '2020' THEN 'post_CU'
             END AS era
         FROM candidates
         WHERE DistIDRunFor = 'PRES'
@@ -249,6 +277,7 @@ def create_indivs_to_pres(conn: sqlite3.Connection) -> None:
             (i.RealCode NOT LIKE 'Z9%' OR i.RealCode IS NULL)
             AND (i.RealCode NOT LIKE 'Z4%' OR i.RealCode IS NULL)
             AND i.Type IN ('10','11','15','15E','15J','22Y')
+            AND {election_day_filter('i.Cycle', 'i.Date')}
     """)
 
     n = conn.execute("SELECT COUNT(*) FROM indivs_to_pres").fetchone()[0]
@@ -305,6 +334,7 @@ def create_pacs_to_pres(conn: sqlite3.Connection) -> None:
         WHERE
             (p.PrimCode NOT LIKE 'Z9%' OR p.PrimCode IS NULL)
             AND (p.PrimCode NOT LIKE 'Z4%' OR p.PrimCode IS NULL)
+            AND {election_day_filter('p.Cycle', 'p.Date')}
 
         UNION ALL
 
@@ -337,6 +367,7 @@ def create_pacs_to_pres(conn: sqlite3.Connection) -> None:
         WHERE
             (po.RealCode NOT LIKE 'Z9%' OR po.RealCode IS NULL)
             AND (po.RealCode NOT LIKE 'Z4%' OR po.RealCode IS NULL)
+            AND {election_day_filter('po.Cycle', 'po.Date')}
     """)
 
     n = conn.execute("SELECT COUNT(*) FROM pacs_to_pres").fetchone()[0]
@@ -417,7 +448,7 @@ def create_exp527_aligned(conn: sqlite3.Connection) -> None:
                 WHEN '2004' THEN 'pre_CU'
                 WHEN '2008' THEN 'pre_CU'
                 WHEN '2012' THEN 'post_CU'
-                WHEN '2016' THEN 'post_CU'
+                WHEN '2020' THEN 'post_CU'
             END                                               AS era,
             CAST(NULLIF(e.Amount, '') AS REAL) * cf.factor    AS Amount_2024
         FROM expenditures_527 e
@@ -726,6 +757,8 @@ def validate(conn: sqlite3.Connection) -> None:
         ("N00008072", "G.W. Bush",   "2004"),
         ("N00009638", "Obama",       "2008"),
         ("N00009638", "Obama",       "2012"),
+        ("N00001669", "Biden",       "2020"),
+        ("N00023864", "Trump",       "2020"),
     ]
     for cid, name, cycle in key_candidates:
         row = conn.execute(
