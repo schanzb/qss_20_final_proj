@@ -647,7 +647,7 @@ def validate_import(conn: sqlite3.Connection) -> None:
     log.info("\n  Presidential candidate check (CID presence):")
     known_pres = {
         "N00008072": "George W. Bush",
-        "N00004357": "John Kerry",
+        "N00000245": "John Kerry",
         "N00009638": "Barack Obama",
         "N00006424": "John McCain",
         "N00000286": "Mitt Romney",

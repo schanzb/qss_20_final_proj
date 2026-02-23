@@ -755,8 +755,11 @@ def validate(conn: sqlite3.Connection) -> None:
     log.info("  Key candidate presence check:")
     key_candidates = [
         ("N00008072", "G.W. Bush",   "2004"),
+        ("N00000245", "Kerry",       "2004"),
         ("N00009638", "Obama",       "2008"),
+        ("N00006424", "McCain",      "2008"),
         ("N00009638", "Obama",       "2012"),
+        ("N00000286", "Romney",      "2012"),
         ("N00001669", "Biden",       "2020"),
         ("N00023864", "Trump",       "2020"),
     ]

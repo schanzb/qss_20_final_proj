@@ -4,8 +4,6 @@ Analyzes how *Citizens United v. FEC* (2010) transformed presidential election s
 
 Raw data and database are too large to track with git. The file structure exists in this repo. Raw data can be downloaded from [Google Drive](https://drive.google.com/file/d/16Q7fw9DEty8_A7-Xs9zoUxQrSjRW4kBu/view?usp=sharing).
 
-See `CLAUDE.md` for full project specification, data dictionary, and pipeline documentation.
-
 #### Cycle Windows
 
 Both data sources are filtered to the same window per cycle: **Jan 1 of the odd year through presidential election day**.
