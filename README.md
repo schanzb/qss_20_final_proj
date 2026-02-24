@@ -2,7 +2,7 @@
 
 Analyzes how *Citizens United v. FEC* (2010) transformed presidential election spending, examining the shift from traditional PAC contributions to Super PAC and dark money expenditures across four presidential cycles: 2004, 2008, 2012, 2020.
 
-Raw data and database are too large to track with git. The file structure exists in this repo. Raw data can be downloaded from [Google Drive](https://drive.google.com/file/d/17PC6LPCypeEOMBU7gHM3LcGgfPcWXeXH/view?usp=sharing).
+Raw data and database are too large to track with git. The file structure exists in this repo. Raw data can be downloaded [Here](https://drive.google.com/file/d/17PC6LPCypeEOMBU7gHM3LcGgfPcWXeXH/view?usp=sharing) and the databased can be downloaded [Here](https://drive.google.com/file/d/1g9gIubmGwO2Fs-B9h06QGxR7-zqXlevt/view?usp=sharing)
 
 #### Cycle Windows
 
