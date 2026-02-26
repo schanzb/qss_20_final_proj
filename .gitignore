@@ -14,7 +14,8 @@ data/raw.zip
 data/*.db
 data/*.db-shm
 data/*.db-wal
-
+data/*.zip
+data.zip
 
 # Keep directory placeholder files
 !**/.gitkeep
