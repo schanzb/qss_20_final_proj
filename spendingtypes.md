@@ -1,3 +1,5 @@
+MOVE THIS INTO THE README!!!
+
 ## PAC Direct (pac_direct, DI = 'D')
 A traditional PAC collects donations and writes a check directly to a candidate's campaign. The candidate's campaign then spends the money however they want. Because it goes to the campaign, it's subject to hard FEC contribution limits ($5,000/candidate/election). CU did not change this. It's a small, capped, tightly regulated channel — which is why your numbers show only ~$3–5M per cycle.
 
