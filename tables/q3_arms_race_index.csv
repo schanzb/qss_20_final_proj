@@ -1,0 +1,5 @@
+Cycle,era,mean_ARI,median_ARI,n_weeks
+2004,pre-CU,0.351,0.3,102
+2008,pre-CU,0.643,0.728,103
+2012,post-CU,0.598,0.648,107
+2020,post-CU,-85.043,0.195,212
