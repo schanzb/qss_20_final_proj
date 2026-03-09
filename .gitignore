@@ -4,6 +4,7 @@ download_checklist.md
 .venv/*
 venv/*
 .claude/*
+paper/*
 
 # Large data files — ignore contents but keep directory structure visible on GitHub
 data/raw/campaign_finance/*
