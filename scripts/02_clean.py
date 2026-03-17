@@ -860,7 +860,7 @@ def main() -> None:
     conn.close()
     elapsed = (time.time() - t_start) / 60
     log.info(f"\nCleaning pipeline complete in {elapsed:.1f} minutes.")
-    log.info("Next step: run  python scripts/03_q1_spending.py")
+    log.info("Next step: run  jupyter notebook scripts/03_q1.ipynb")
 
 
 if __name__ == "__main__":
