@@ -1,6 +1,6 @@
 ### QSS20 Final Project — Money, and the State: How Citizens United v. FEC Reshaped Presidential Campaign Finance
 
-This project analyzes how *Citizens United v. FEC* (2010) transformed presidential election spending. The central question is whether the explosion of Super PAC and dark money spending after CU represented genuinely new money entering politics, or a reshuffling of outside spending that was already happening through 527 organizations. We look at four presidential cycles (2004, 2008, 2012, and 2020) spanning the pre- and post-CU eras.
+This project analyzes how *Citizens United v. FEC* (2010) transformed presidential election spending. The central question is whether the explosion of Super PAC spending after CU represented genuinely new money entering politics, or a reshuffling of outside spending that was already happening through 527 organizations. We look at four presidential cycles (2004, 2008, 2012, and 2020) spanning the pre- and post-CU eras.
 
 ---
 
@@ -34,7 +34,7 @@ Download the raw data archive [here](https://drive.google.com/file/d/17PC6LPCype
 
 ```bash
 python scripts/01_import.py   # ~13 min, loads raw CSV files into SQLite
-python scripts/02_clean.py    # ~5–15 min, builds analysis tables
+python scripts/02_clean.py    # ~5–20 min (depends on hardware), builds analysis tables
 ```
 
 Run these in order. The import script creates `data/campaign_finance.db`; the clean script adds the derived tables that the notebooks read from.
