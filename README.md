@@ -1,6 +1,6 @@
-### Final Project — Money, and the State
+### QSS20 Final Project — Money, and the State: How Citizens United v. FEC Reshaped Presidential Campaign Finance
 
-This project analyzes how *Citizens United v. FEC* (2010) transformed presidential election spending. The central question is whether the explosion of Super PAC and dark money spending after CU represented genuinely new money entering politics, or a reshuffling of outside spending that was already happening through 527 organizations. We look at four presidential cycles — 2004, 2008, 2012, and 2020 — spanning the pre- and post-CU eras.
+This project analyzes how *Citizens United v. FEC* (2010) transformed presidential election spending. The central question is whether the explosion of Super PAC and dark money spending after CU represented genuinely new money entering politics, or a reshuffling of outside spending that was already happening through 527 organizations. We look at four presidential cycles (2004, 2008, 2012, and 2020) spanning the pre- and post-CU eras.
 
 ---
 
@@ -25,10 +25,10 @@ pip install -r requirements.txt
 The raw data files and SQLite database are too large to track with git, so you'll need to download them separately. There are two options depending on how much you want to reproduce:
 
 **Option A: Download the pre-built database (faster)**
-Download the SQLite database [here](https://drive.google.com/file/d/1g9gIubmGwO2Fs-B9h06QGxR7-zqXlevt/view?usp=sharing) and place it at `data/campaign_finance.db`. Then skip straight to running the notebooks.
+Download the SQLite database [here](https://drive.google.com/file/d/1g9gIubmGwO2Fs-B9h06QGxR7-zqXlevt/view?usp=sharing) and place it at `data/campaign_finance.db`. Rerun `02_clean.py` pipeline scripts to confirm all data exist. Then run the notebooks.
 
 **Option B: Download raw files and run the full pipeline**
-Download the raw data archive [here](https://drive.google.com/file/d/17PC6LPCypeEOMBU7gHM3LcGgfPcWXeXH/view?usp=sharing), unzip it, and place the files in `data/raw/`. Then run the pipeline scripts below.
+Download the raw data archive [here](https://drive.google.com/file/d/17PC6LPCypeEOMBU7gHM3LcGgfPcWXeXH/view?usp=sharing), unzip it, and place the files in `data/raw/`. Then run the pipeline scripts below to compile and clean.
 
 ### Running the Pipeline (Option B only)
 
