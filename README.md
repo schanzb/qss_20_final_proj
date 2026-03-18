@@ -30,7 +30,7 @@ Download the SQLite database [here](https://drive.google.com/file/d/1g9gIubmGwO2
 **Option B: Download raw files and run the full pipeline**
 Download the raw data archive [here](https://drive.google.com/file/d/17PC6LPCypeEOMBU7gHM3LcGgfPcWXeXH/view?usp=sharing), unzip it, and place the files in `data/raw/`. Then run the pipeline scripts below to compile and clean.
 
-### Running the Pipeline (Option B only)
+### Running the Pipeline
 
 ```bash
 python scripts/01_import.py   # ~13 min, loads raw CSV files into SQLite
