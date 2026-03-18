@@ -37,7 +37,7 @@ python scripts/01_import.py   # ~13 min, loads raw CSV files into SQLite
 python scripts/02_clean.py    # ~5–20 min (depends on hardware), builds analysis tables
 ```
 
-Run these in order. The import script creates `data/campaign_finance.db`; the clean script adds the derived tables that the notebooks read from.
+Run these in order. The import script creates `data/campaign_finance.db`. The clean script adds the derived tables that the notebooks read from.  For full documentation of the pipeline cleaning, please see `scripts/02_clean_notes.md`.
 
 ### Running the Analysis Notebooks
 
